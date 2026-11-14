@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.wabug.WAAutoService.Companion.Job
+import com.example.wabug.WAAutoService.Job
 class MainActivity : AppCompatActivity() {
     override fun onCreate(b: Bundle?) {
         super.onCreate(b)

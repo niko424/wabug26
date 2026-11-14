@@ -17,7 +17,7 @@ class WAAutoService : AccessibilityService() {
         }
         private fun fireNext() {
             val job = queue.removeFirstOrNull() ?: return
-            val payload = Payloads.get(job.payloadId)?.gen() ?: "x"
+            val payload = Payloads.get(job.payloadId)?.gen?.invoke() ?: "x"
             if (Sender.open(job.number, payload, job.pkg) && instance != null) {
                 awaitingSend = true
                 Handler(Looper.getMainLooper()).postDelayed({ awaitingSend = false; fireNext() }, 8000L)
